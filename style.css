@@ -1,0 +1,248 @@
+@font-face{
+  font-family: "cactus";
+  src: url('fonts/cactusflower.ttf');
+}
+
+@font-face{
+  font-family: "brandy";
+  src: url('fonts/Brandy Script.ttf');
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  min-width: 100vh;
+  margin: 0;
+  padding-top: 20;
+  background-color: rgb(217, 214, 121);
+
+}
+
+.container{
+  display: grid;
+  grid: "header header header header" auto
+        ". address address ." auto
+        ". days hours ." auto
+        ". main main ." auto
+        ". sidebar sidebar ."
+        / 10% 1fr 1fr 10%;
+  position: relative;
+  z-index: 0;
+}
+
+header{
+  grid-area: header;
+  line-height: .2;
+  text-align: center;
+  overflow: wrap;
+  background-image: linear-gradient(rgb(93, 222, 194) 70%, rgb(217, 214, 121));
+  margin-bottom: 2rem;
+}
+
+.info{
+  font-family: monospace;
+  font-size: calc(1.3rem + .4vw);
+  color: rgb(252, 124, 98);
+  letter-spacing: 1.5px;
+}
+
+#address{
+  grid-area: address;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#hours{
+  grid-area: hours;
+  list-style: none;
+  text-align: left;
+  padding: 5px;
+}
+
+#days{
+  grid-area: days;
+  list-style: none;
+  text-align: right;
+  padding: 5px;
+}
+
+
+main{
+  padding: 20px;
+  grid-area: main;
+  background-color: rgb(93, 222, 194);
+  border-radius: 15px;
+  border-style: ridge;
+  border-width: 10px;
+  border-color: rgb(252, 124, 98);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-around;
+  grid-gap: 20px;
+}
+
+.storeimgs{
+  width: 100%;
+}
+
+.sidebar{
+  padding: 20px;
+  grid-area: sidebar;
+  text-align: center;
+}
+
+#pawpawcutout{
+  width: 20%;
+}
+
+.navigation{
+  margin: 0;
+  padding: 5px 0;
+  height: auto;
+  position: relative;
+  background-color: rgba(255, 255, 255, .2);
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0 0;
+  z-index: 1;
+}
+
+.navigation li{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a{
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 2rem;
+  transition: box-shadow .5s;
+}
+
+a:link{
+  color: rgb(252, 124, 98);
+}
+
+a:visited{
+  color: rgb(252, 124, 98);
+}
+
+a:hover{
+  box-shadow: 0 12px 5px -10px rgb(93, 222, 194);
+}
+
+.navigation a{
+  font-size: 1.5rem;
+}
+
+h1{
+  font-size: 6rem;
+  font-weight: lighter;
+  font-family: "cactus", sans-serif;
+  color: rgb(225, 220, 191);
+  text-shadow: -5px 5px rgb(252, 124, 98);
+  letter-spacing: 4px;
+}
+
+h2{
+  font-size: 5rem;
+  font-weight: lighter;
+  font-family: "cactus", sans-serif;
+  color: rgb(225, 220, 191);
+  text-shadow: -5px 5px rgb(252, 124, 98);
+  letter-spacing: 4px;
+}
+
+h3{
+  font-size: 5rem;
+  font-family: "brandy", sans-serif;
+  color: rgb(225, 220, 191);
+  text-shadow: -5px 5px rgb(252, 124, 98);
+}
+
+p{
+  font-family: "cactus";
+  font-weight: lighter;
+  color: rgb(252, 124, 98);
+  font-size: 1.4rem;
+  text-shadow: -2px 2px rgb(225, 220, 191);
+  letter-spacing: .1rem;
+}
+
+/*------ Pawpaw Corner------*/
+#pawpawheader{
+  grid-area: pawpawheader;
+}
+
+.gallery{
+  grid-area: gallery;
+}
+
+.pawpawcontainer{
+  display: grid;
+  grid: "pawpawheader pawpawheader pawpawheader" auto
+        ". gallery ." auto
+        /5% 1fr 5%;
+}
+
+.gallery{
+  padding: 0px;
+}
+
+.gallery > .pawpawpics {
+  margin: 0;
+  background-color: rgb(93, 222, 194);
+  border-radius: 15px;
+  border-style: ridge;
+  border-width: 10px;
+  border-color: rgb(252, 124, 98);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-row-gap: 1rem;
+  grid-auto-flow: dense;
+  padding-bottom: 20px;
+
+}
+
+.gallery > .pawpawpics > li:nth-child(3n) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* .gallery > .pawpawpics > li:nth-child(8n) {
+  grid-column: span 3;
+  grid-row: span 3;
+} */
+
+.gallery > .pawpawpics > li > figure {
+  height: 100%;
+  /* column-break-inside: avoid; */
+}
+
+.gallery > .pawpawpics > li > figure > img{
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 600px){
+
+a{
+  font-size: 2rem;
+}
+
+.navigation{
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.navigation a{
+  font-size: calc(1.5rem + .2vw);
+}
+}
