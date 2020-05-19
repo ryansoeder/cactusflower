@@ -89,7 +89,6 @@ main{
   padding: 30px;
   grid-area: main;
   background-color: rgb(93, 222, 194);
-  /* border-radius: 15px; */
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
@@ -215,13 +214,9 @@ a:hover{
 
 
 /*------ Pawpaw Corner------*/
-#pawpawheader{
-  grid-area: pawpawheader;
-}
-
-.gallery{
-  grid-area: gallery;
-}
+/* ********************* */
+/* **** GRID LAYOUT **** */
+/* ********************* */
 
 .pawpawcontainer{
   display: grid;
@@ -230,7 +225,17 @@ a:hover{
         /5% 1fr 5%;
 }
 
+
+/* ****************************** */
+/* **** GRID SECTION LAYOUTS **** */
+/* ****************************** */
+
+#pawpawheader{
+  grid-area: pawpawheader;
+}
+
 .gallery{
+  grid-area: gallery;
   padding: 0px;
 }
 
@@ -255,14 +260,8 @@ a:hover{
   grid-row: span 2;
 }
 
-/* .gallery > .pawpawpics > li:nth-child(8n) {
-  grid-column: span 3;
-  grid-row: span 3;
-} */
-
 .gallery > .pawpawpics > li > figure {
   height: 100%;
-  /* column-break-inside: avoid; */
 }
 
 .gallery > .pawpawpics > li > figure > img{
