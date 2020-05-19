@@ -21,7 +21,11 @@ body{
 
 }
 
-/* grid layout */
+
+/* ********************* */
+/* **** GRID LAYOUT **** */
+/* ********************* */
+
 .container{
   display: grid;
   grid: "header header header header" auto
@@ -34,14 +38,23 @@ body{
   z-index: 0;
 }
 
-/* grid section layouts */
+
+/* ****************************** */
+/* **** GRID SECTION LAYOUTS **** */
+/* ****************************** */
+
 header{
   grid-area: header;
   line-height: .2;
   text-align: center;
   overflow: wrap;
-  background-image: linear-gradient(rgb(93, 222, 194) 70%, rgb(217, 214, 121));
+  background-color: rgb(93, 222, 194);
   margin-bottom: 2rem;
+  border-bottom: 15px ridge goldenrod;
+  border-left: 15px ridge goldenrod;
+  border-right: 15px ridge goldenrod;
+
+
 }
 
 .info{
@@ -73,21 +86,17 @@ header{
 
 
 main{
-  padding: 20px;
+  padding: 30px;
   grid-area: main;
   background-color: rgb(93, 222, 194);
-  border-radius: 15px;
+  /* border-radius: 15px; */
   border-style: ridge;
-  border-width: 10px;
-  border-color: rgb(252, 124, 98);
+  border-width: 15px;
+  border-color: goldenrod;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-around;
   grid-gap: 20px;
-}
-
-.storeimgs{
-  width: 100%;
 }
 
 .pawpawcorner{
@@ -96,9 +105,23 @@ main{
   text-align: center;
 }
 
+
+/* ********************** */
+/* **** IMAGE SIZING **** */
+/* ********************** */
+
+.storeimgs{
+  width: 100%;
+}
+
 #pawpawcutout{
   width: 20%;
 }
+
+
+/* ************************* */
+/* **** NAVIGATION MENU **** */
+/* ************************* */
 
 .navigation{
   margin: 0;
@@ -120,31 +143,16 @@ main{
   padding-right: 10px;
 }
 
-a{
-  text-decoration: none;
-  font-family: monospace;
-  font-size: 2rem;
-  transition: color .5s;
-  display: block;
-}
-
-a:link{
-  color: rgb(252, 124, 98);
-}
-
-a:visited{
-  color: rgb(252, 124, 98);
-}
-
-a:hover{
-  color: rgb(93, 222, 194);
-}
-
 .navigation a{
   font-size: 3rem;
   font-family: "brandy";
   text-shadow: -2px 2px rgb(225, 220, 191);
 }
+
+
+/* ********************** */
+/* **** TEXT STYLING **** */
+/* ********************** */
 
 h1{
   font-size: 6rem;
@@ -179,6 +187,32 @@ p{
   text-shadow: -2px 2px rgb(225, 220, 191);
   letter-spacing: .1rem;
 }
+
+
+/* ********************** */
+/* **** LINK STYLING **** */
+/* ********************** */
+
+a{
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 2rem;
+  transition: color .5s;
+  display: block;
+}
+
+a:link{
+  color: rgb(252, 124, 98);
+}
+
+a:visited{
+  color: rgb(252, 124, 98);
+}
+
+a:hover{
+  color: goldenrod;
+}
+
 
 /*------ Pawpaw Corner------*/
 #pawpawheader{
