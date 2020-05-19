@@ -21,18 +21,20 @@ body{
 
 }
 
+/* grid layout */
 .container{
   display: grid;
   grid: "header header header header" auto
         ". address address ." auto
         ". days hours ." auto
         ". main main ." auto
-        ". sidebar sidebar ."
+        ". pawpaw pawpaw ."
         / 10% 1fr 1fr 10%;
   position: relative;
   z-index: 0;
 }
 
+/* grid section layouts */
 header{
   grid-area: header;
   line-height: .2;
@@ -88,9 +90,9 @@ main{
   width: 100%;
 }
 
-.sidebar{
+.pawpawcorner{
   padding: 20px;
-  grid-area: sidebar;
+  grid-area: pawpaw;
   text-align: center;
 }
 
