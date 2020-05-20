@@ -232,6 +232,7 @@ a:hover{
   grid: "pawpawheader pawpawheader pawpawheader" auto
         ". gallery ." auto
         /5% 1fr 5%;
+  grid-gap: 20px;
 }
 
 
