@@ -29,8 +29,8 @@ body{
 .container{
   display: grid;
   grid: "header header header header" auto
-        ". address address ." auto
-        ". days hours ." auto
+        "address address address address" auto
+        "days days hours hours" auto
         ". main main ." auto
         ". pawpaw pawpaw ."
         / 10% 1fr 1fr 10%;
@@ -49,7 +49,7 @@ header{
   text-align: center;
   overflow: wrap;
   background-color: rgb(93, 222, 194);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   border-bottom: 15px ridge goldenrod;
   border-left: 15px ridge goldenrod;
   border-right: 15px ridge goldenrod;
@@ -62,26 +62,35 @@ header{
   font-size: calc(1.3rem + .4vw);
   color: rgb(252, 124, 98);
   letter-spacing: 1.5px;
+  margin:0;
+
+  background: linear-gradient(rgba(217, 214, 121, 0.9), rgba(217, 214, 121, 0.9)), url("img/map.png");  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #address{
   grid-area: address;
   text-align: center;
   font-size: 2rem;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 #hours{
   grid-area: hours;
   list-style: none;
   text-align: left;
-  padding: 5px;
+  padding-bottom: 30px;
 }
 
 #days{
   grid-area: days;
   list-style: none;
   text-align: right;
-  padding: 5px;
+  padding-bottom: 30px;
 }
 
 
@@ -104,10 +113,10 @@ main{
   text-align: center;
 }
 
-
 /* ********************** */
 /* **** IMAGE SIZING **** */
 /* ********************** */
+
 
 .storeimgs{
   width: 100%;
