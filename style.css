@@ -17,7 +17,7 @@ body{
   min-width: 100vh;
   margin: 0;
   padding-top: 20;
-  background-color: rgb(217, 214, 121);
+  background-color: rgb(175, 238, 238);
 
 }
 
@@ -64,7 +64,7 @@ header{
   letter-spacing: 1.5px;
   margin:0;
 
-  background: linear-gradient(rgba(217, 214, 121, 0.9), rgba(217, 214, 121, 0.9)), url("img/map.png");  
+  background: linear-gradient(rgba(175, 238, 238, 0.9), rgba(175, 238, 238, 0.9)), url("img/map.png");  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,6 +84,9 @@ header{
   list-style: none;
   text-align: left;
   padding-bottom: 30px;
+  border-bottom-style: ridge;
+  border-bottom-width: 15px;
+  border-bottom-color: goldenrod;
 }
 
 #days{
@@ -91,6 +94,9 @@ header{
   list-style: none;
   text-align: right;
   padding-bottom: 30px;
+  border-bottom-style: ridge;
+  border-bottom-width: 15px;
+  border-bottom-color: goldenrod;
 }
 
 
@@ -105,6 +111,7 @@ main{
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-around;
   grid-gap: 20px;
+  margin-top: 30px;
 }
 
 .pawpawcorner{
@@ -113,10 +120,10 @@ main{
   text-align: center;
 }
 
+
 /* ********************** */
 /* **** IMAGE SIZING **** */
 /* ********************** */
-
 
 .storeimgs{
   width: 100%;
@@ -149,6 +156,7 @@ main{
 .navigation li{
   padding-left: 10px;
   padding-right: 10px;
+  display: block;
 }
 
 .navigation a{
@@ -232,7 +240,7 @@ a:hover{
   grid: "pawpawheader pawpawheader pawpawheader" auto
         ". gallery ." auto
         /5% 1fr 5%;
-  grid-gap: 20px;
+  grid-gap: 30px;
 }
 
 
@@ -254,7 +262,7 @@ a:hover{
   background-color: rgb(93, 222, 194);
   border-style: ridge;
   border-width: 15px;
-  border-color: rgb(252, 124, 98);
+  border-color: goldenrod;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -278,7 +286,7 @@ a:hover{
   height: 100%;
 }
 
-@media (max-width: 600px){
+@media (max-width: 700px){
 
 a{
   font-size: 2rem;
