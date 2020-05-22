@@ -17,7 +17,7 @@ body{
   min-width: 100vh;
   margin: 0;
   padding-top: 20;
-  background-color: rgb(175, 238, 238);
+  background-image: url(img/cactus_background.jpg);
 
 }
 
@@ -103,7 +103,7 @@ header{
 main{
   padding: 30px;
   grid-area: main;
-  background-color: rgb(93, 222, 194);
+  background-color: paleturquoise;
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
@@ -143,7 +143,7 @@ main{
   padding: 5px 0;
   height: auto;
   position: relative;
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, .8);
   list-style: none;
   display: flex;
   flex-flow: row wrap;
