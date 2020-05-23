@@ -139,30 +139,35 @@ main{
 /* ************************* */
 
 .navigation{
-  margin: 0;
-  padding: 5px 0;
+  padding: 10px 0;
   height: auto;
   position: relative;
   background-color: rgba(255, 255, 255, .8);
   list-style: none;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: space-between;
   margin: 20px 0 0 0;
   z-index: 1;
 }
 
 .navigation li{
-  padding-left: 10px;
-  padding-right: 10px;
-  display: block;
+  flex-grow: 1;
+  text-align: center;
+  border-bottom: 2px solid rgb(252, 124, 98);
+  padding: 10px 0;
+}
+
+.navigation li:last-child{
+  border-bottom: none;
 }
 
 .navigation a{
   font-size: 3rem;
   font-family: "brandy";
   text-shadow: -2px 2px rgb(225, 220, 191);
+  display: block;
 }
 
 
@@ -294,7 +299,16 @@ a:hover{
 
 .navigation{
   flex-direction: row;
-  line-height: 1.5;
+  /* line-height: 1.5; */
+}
+
+.navigation li{
+  border-bottom: 0;
+  border-right: 2px solid rgb(252, 124, 98);
+}
+
+.navigation li:last-child{
+  border-right: none;
 }
 
 .navigation a{
