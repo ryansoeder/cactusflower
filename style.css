@@ -18,7 +18,7 @@ body{
   margin: 0;
   padding-top: 20;
   background-image: url(img/cactus_background.jpg);
-
+  background-attachment: fixed;
 }
 
 
@@ -146,7 +146,7 @@ main{
   background-color: rgba(255, 255, 255, .8);
   list-style: none;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0 0 0;
@@ -231,6 +231,7 @@ a:hover{
 
 
 /*------ Pawpaw Corner------*/
+
 /* ********************* */
 /* **** GRID LAYOUT **** */
 /* ********************* */
@@ -240,7 +241,7 @@ a:hover{
   grid: "pawpawheader pawpawheader pawpawheader" auto
         ". gallery ." auto
         /5% 1fr 5%;
-  grid-gap: 30px;
+  grid-gap: 0;
 }
 
 
@@ -259,7 +260,7 @@ a:hover{
 
 .gallery > .pawpawpics {
   margin: 0;
-  background-color: rgb(93, 222, 194);
+  background-color: paleturquoise;
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
@@ -286,14 +287,11 @@ a:hover{
   height: 100%;
 }
 
-@media (max-width: 700px){
+@media (min-width: 700px){
 
-a{
-  font-size: 2rem;
-}
 
 .navigation{
-  flex-direction: column;
+  flex-direction: row;
   line-height: 1.5;
 }
 
