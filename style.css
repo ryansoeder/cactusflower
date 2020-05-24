@@ -17,7 +17,7 @@ body{
   min-width: 100vh;
   margin: 0;
   padding-top: 20;
-  background-image: url(img/cactus_background.jpg);
+  background-image: linear-gradient(to top,black -5%, gold 3%, orange 8%, fuchsia 15%, indigo 30%, midnightblue 50%, black 100%);
   background-attachment: fixed;
 }
 
@@ -142,7 +142,7 @@ main{
   padding: 10px 0;
   height: auto;
   position: relative;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .5);
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -219,7 +219,7 @@ a{
   font-family: monospace;
   font-size: 2rem;
   transition: color .5s;
-  display: block;
+  display: inline-block;
 }
 
 a:link{
