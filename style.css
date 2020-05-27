@@ -17,7 +17,7 @@ body{
   min-width: 100vh;
   margin: 0;
   padding-top: 20;
-  background-image: linear-gradient(to top,black -5%, gold 3%, orange 8%, fuchsia 15%, indigo 30%, midnightblue 50%, black 100%);
+  background-image: url("img/cactus_background.jpg");
   background-attachment: fixed;
 }
 
@@ -45,7 +45,6 @@ body{
 
 header{
   grid-area: header;
-  line-height: .2;
   text-align: center;
   overflow: wrap;
   background-color: rgb(93, 222, 194);
@@ -53,8 +52,21 @@ header{
   border-bottom: 15px ridge goldenrod;
   border-left: 15px ridge goldenrod;
   border-right: 15px ridge goldenrod;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 70px 40px 50px;
+}
 
+/* Flex box cheracteristics in header */
+.logo{
+  line-height: .2;
+  flex: 1 500px;
+}
 
+.tag{
+  flex: 1 390px;
 }
 
 .info{
