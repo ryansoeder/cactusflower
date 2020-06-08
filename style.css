@@ -107,9 +107,9 @@ header{
 #address{
   grid-area: address;
   text-align: center;
-  font-size: 2rem;
   padding-top: 30px;
   padding-bottom: 20px;
+ 
 }
 
 #hours{
@@ -141,6 +141,9 @@ main{
   border-width: 15px;
   border-color: goldenrod;
   margin-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -169,8 +172,9 @@ main{
 
 .glide img{
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
+  position: relative;
 }
 
 .glide__slide{
@@ -285,6 +289,17 @@ a:hover{
   color: goldenrod;
 }
 
+#address > a{
+  color: rgb(225, 220, 191);
+  background-color: rgb(252, 124, 98);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+#address > a:hover{
+  background-color: goldenrod;
+}
 
 /*------ Pawpaw Corner------*/
 
@@ -350,7 +365,6 @@ a:hover{
 
 .navigation{
   flex-direction: row;
-  /* line-height: 1.5; */
 }
 
 .navigation li{
