@@ -17,8 +17,20 @@ body{
   min-width: 100vh;
   margin: 0;
   padding-top: 20;
+  /* background-image: url("img/cactus_background.jpg");
+  background-attachment: fixed; */
+}
+
+/* Fix for ^background-image^ not staying fixed on iOS devices */
+body::after{
+  content: "";
   background-image: url("img/cactus_background.jpg");
-  background-attachment: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
 }
 
 
@@ -56,7 +68,7 @@ header{
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  padding: 30px 70px 40px 50px;
+  padding: 30px 40px 40px 50px;
 }
 
 /* Flex box cheracteristics in header */
@@ -82,6 +94,15 @@ header{
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+/* Fix for ^background-image^ not staying fixed on iOS devices */
+@supports (-webkit-touch-callout: none) {
+  .info{
+    background-attachment: none;
+    background-position: top;
+  }
+}
+
 
 #address{
   grid-area: address;
@@ -272,7 +293,7 @@ a:hover{
 
 .gallery{
   grid-area: gallery;
-  padding: 0px;
+  padding: 0;
   margin: 0;
 }
 
