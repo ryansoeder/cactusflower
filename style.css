@@ -17,8 +17,6 @@ body{
   min-width: 100vh;
   margin: 0;
   padding-top: 20;
-  /* background-image: url("img/cactus_background.jpg");
-  background-attachment: fixed; */
 }
 
 /* Fix for ^background-image^ not staying fixed on iOS devices */
