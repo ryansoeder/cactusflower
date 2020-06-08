@@ -144,11 +144,6 @@ main{
   text-align: center;
   display: flex;
   flex-direction: column;
-
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-content: space-around;
-  grid-gap: 20px; */
 }
 
 .pawpawcorner{
