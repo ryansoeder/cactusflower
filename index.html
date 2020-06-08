@@ -50,11 +50,27 @@
   </ul>
 
     <main>
-      <div>
-        <img class="storeimgs" src="img/storepup.jpg" alt="Pawpaw the store pup">
-      </div>
-      <div>
-        <img class="storeimgs" src="img/window.jpg" alt="store window display">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/781057550/polka-dot-bowtie-a-line-skirt-with?ref=shop_home_active_1&frs=1" target="_blank"><img src="img/etsy/1.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/781032794/60s-two-piece-high-waisted-pleated?ref=shop_home_active_2&frs=1" target="_blank"><img src="img/etsy/2.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/779850350/90s-tiger-print-stretchy-tee?ref=shop_home_active_3&frs=1" target="blank"><img src="img/etsy/3.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/778607398/reverse-tie-dye-high-waisted-cotton?ref=shop_home_active_4&frs=1&crt=1" target="_blank"><img src="img/etsy/4.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/778599688/western-cowprint-dancing-skirt?ref=shop_home_active_5&frs=1" target="_blank"><img src="img/etsy/5.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/791255737/vintage-wrangler-high-waisted-cutoff?ref=shop_home_active_6&frs=1&cns=1" target="blank"><img src="img/etsy/6.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/791246291/vintage-high-waisted-z-cavaricci-denim?ref=shop_home_active_7&frs=1" target="_blank"><img src="img/etsy/7.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/791243019/gold-sequined-kitten-heels-with-flower?ref=shop_home_active_8&frs=1&cns=1" target="_blank"><img src="img/etsy/8.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/777354676/geometric-print-90s-mock-neck-top?ref=shop_home_active_9&frs=1" target="blank"><img src="img/etsy/9.jpg"></a></li>
+            <li class="glide__slide"><a href="https://www.etsy.com/listing/777353094/90s-crazy-print-sleeveless-mock-neck?ref=shop_home_active_10&frs=1" target="blank"><img src="img/etsy/10.jpg"></a></li>
+          </ul>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+
       </div>
     </main>
 
@@ -71,6 +87,29 @@
   </ul>
 
 <script src="glide-3.4.1/dist/glide.js"></script>  
+
+<script>
+
+new Glide('.glide', {
+  type: 'carousel',
+  startAt: 0,
+  perView: 3,
+  breakpoints: {
+    900: {
+      perView: 2
+    },
+    700: {
+      perView: 1
+    }
+  },
+  focusAt: 'center',
+  autoplay: 3000,
+  animationDuration: 1000,
+
+}).mount()
+
+</script>
+
 </body>
 
 </html>

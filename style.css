@@ -140,11 +140,12 @@ main{
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
-  display: grid;
+  margin-top: 30px;
+
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-around;
-  grid-gap: 20px;
-  margin-top: 30px;
+  grid-gap: 20px; */
 }
 
 .pawpawcorner{
@@ -164,6 +165,23 @@ main{
 
 #pawpawcutout{
   width: 20%;
+}
+
+.glide img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.glide__slide{
+  transform: scale(.9);
+  transition: all ease 0.5s;
+  filter: brightness(50%);
+}
+
+.glide__slide--active{
+  transform: scale(1);
+  filter: brightness(100%);
 }
 
 
