@@ -107,9 +107,9 @@ header{
 #address{
   grid-area: address;
   text-align: center;
-  font-size: 2rem;
   padding-top: 30px;
   padding-bottom: 20px;
+ 
 }
 
 #hours{
@@ -140,11 +140,15 @@ main{
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
-  display: grid;
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: space-around;
-  grid-gap: 20px;
-  margin-top: 30px;
+  grid-gap: 20px; */
 }
 
 .pawpawcorner{
@@ -164,6 +168,24 @@ main{
 
 #pawpawcutout{
   width: 20%;
+}
+
+.glide img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  position: relative;
+}
+
+.glide__slide{
+  transform: scale(.9);
+  transition: all ease 0.5s;
+  filter: brightness(50%);
+}
+
+.glide__slide--active{
+  transform: scale(1);
+  filter: brightness(100%);
 }
 
 
@@ -267,6 +289,17 @@ a:hover{
   color: goldenrod;
 }
 
+#address > a{
+  color: rgb(225, 220, 191);
+  background-color: rgb(252, 124, 98);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+#address > a:hover{
+  background-color: goldenrod;
+}
 
 /*------ Pawpaw Corner------*/
 
@@ -332,7 +365,6 @@ a:hover{
 
 .navigation{
   flex-direction: row;
-  /* line-height: 1.5; */
 }
 
 .navigation li{
