@@ -345,11 +345,8 @@ a:hover{
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-row-gap: 1rem;
-  grid-column-gap: 0;
+  grid-gap: .5rem;
   grid-auto-flow: dense;
-  padding-bottom: 20px;
-  padding-left: 0;
 }
 
 .gallery > .pawpawpics > li:nth-child(3n) {
@@ -359,11 +356,40 @@ a:hover{
 
 .gallery > .pawpawpics > li > figure {
   height: 100%;
+  width: auto;
 }
 
 .gallery > .pawpawpics > li > figure > img{
   width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+
+/* ************************* */
+/* **** LIGHTBOX STYLES **** */
+/* ************************* */
+
+#lightbox{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
   height: 100%;
+  background-color: rgba(175, 238, 238, .8);
+  display: none;
+}
+
+#lightbox.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img{
+  max-height: 80%;
+  max-width: 90%;
+  border: ridge 15px goldenrod;
 }
 
 @media (min-width: 700px){
