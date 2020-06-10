@@ -1,0 +1,491 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@font-face{
+    font-family: "cactus";
+    src: url('fonts/cactusflower.ttf');
+  }
+  
+  @font-face{
+    font-family: "brandy";
+    src: url('fonts/Brandy Script.ttf');
+  }
+  
+  *{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  body{
+    min-height: 100vh;
+    min-width: 100vh;
+    margin: 0;
+    padding-top: 20;
+  }
+  
+  /* Fix for ^background-image^ not staying fixed on iOS devices */
+  body::after{
+    content: "";
+    background-image: url("img/cactus_background.jpg");
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+  }
+  
+  
+  /* ********************* */
+  /* **** GRID LAYOUT **** */
+  /* ********************* */
+  
+  .container{
+    display: -ms-grid;
+    display: grid;
+    grid: "header header header header" auto
+          "address address address address" auto
+          "days days hours hours" auto
+          ". main main ." auto
+          ". pawpaw pawpaw ."
+          / 10% 1fr 1fr 10%;
+    position: relative;
+    z-index: 0;
+  }
+  
+  
+  /* ****************************** */
+  /* **** GRID SECTION LAYOUTS **** */
+  /* ****************************** */
+  
+  header{
+    grid-area: header;
+    text-align: center;
+    overflow: wrap;
+    background-color: rgb(93, 222, 194);
+    margin-bottom: 0;
+    border-bottom: 15px ridge goldenrod;
+    border-left: 15px ridge goldenrod;
+    border-right: 15px ridge goldenrod;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 30px 40px 40px 50px;
+  }
+  
+  /* Flex box cheracteristics in header */
+  .logo{
+    line-height: .2;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 500px;
+            flex: 1 500px;
+  }
+  
+  .tag{
+    -webkit-box-flex: 1;
+        -ms-flex: 1 390px;
+            flex: 1 390px;
+  }
+  
+  .info{
+    font-family: monospace;
+    font-size: calc(1.3rem + .4vw);
+    color: rgb(252, 124, 98);
+    letter-spacing: 1.5px;
+    margin:0;
+  
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(175, 238, 238, 0.9)), to(rgba(175, 238, 238, 0.9))), url("img/map.png");
+  
+    background: -o-linear-gradient(rgba(175, 238, 238, 0.9), rgba(175, 238, 238, 0.9)), url("img/map.png");
+  
+    background: linear-gradient(rgba(175, 238, 238, 0.9), rgba(175, 238, 238, 0.9)), url("img/map.png");  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  /* Fix for ^background-image^ not staying fixed on iOS devices */
+  @supports (-webkit-touch-callout: none) {
+    .info{
+      background-attachment: none;
+      background-position: center;
+      background-size: auto 100%;
+      
+    }
+  }
+  
+  
+  #address{
+    grid-area: address;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+   
+  }
+  
+  #hours{
+    grid-area: hours;
+    list-style: none;
+    text-align: left;
+    padding-bottom: 30px;
+    border-bottom-style: ridge;
+    border-bottom-width: 15px;
+    border-bottom-color: goldenrod;
+  }
+  
+  #days{
+    grid-area: days;
+    list-style: none;
+    text-align: right;
+    padding-bottom: 30px;
+    border-bottom-style: ridge;
+    border-bottom-width: 15px;
+    border-bottom-color: goldenrod;
+  }
+  
+  
+  main{
+    padding: 30px;
+    grid-area: main;
+    background-color: paleturquoise;
+    border-style: ridge;
+    border-width: 15px;
+    border-color: goldenrod;
+    margin-top: 30px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .pawpawcorner{
+    padding: 20px;
+    grid-area: pawpaw;
+    text-align: center;
+  }
+  
+  
+  /* ********************** */
+  /* **** IMAGE SIZING **** */
+  /* ********************** */
+  
+  .storeimgs{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  
+  .storeimgs > img{
+    width: 300px;
+    height: 100%;
+    margin: 20px 20px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 auto;
+            flex: 1 auto;
+  }
+  
+  #pawpawcutout{
+    width: 20%;
+  }
+  
+  .glide img{
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+  }
+  
+  .glide__slide{
+    -webkit-transform: scale(.9);
+        -ms-transform: scale(.9);
+            transform: scale(.9);
+    -webkit-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    -webkit-filter: brightness(50%);
+            filter: brightness(50%);
+  }
+  
+  .glide__slide--active{
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+  }
+  
+  
+  /* ************************* */
+  /* **** NAVIGATION MENU **** */
+  /* ************************* */
+  
+  .navigation{
+    padding: 10px 0;
+    height: auto;
+    position: relative;
+    background-color: rgba(255, 255, 255, .5);
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
+    margin: 20px 0 0 0;
+    z-index: 1;
+  }
+  
+  .navigation li{
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center;
+    border-bottom: 2px solid rgb(252, 124, 98);
+    padding: 10px 0;
+  }
+  
+  .navigation li:last-child{
+    border-bottom: none;
+  }
+  
+  .navigation a{
+    font-size: 3rem;
+    font-family: "brandy";
+    text-shadow: -2px 2px rgb(225, 220, 191);
+    display: block;
+  }
+  
+  
+  /* ********************** */
+  /* **** TEXT STYLING **** */
+  /* ********************** */
+  
+  h1{
+    font-size: 6rem;
+    font-weight: lighter;
+    font-family: "cactus", sans-serif;
+    color: rgb(225, 220, 191);
+    text-shadow: -5px 5px rgb(252, 124, 98);
+    letter-spacing: 4px;
+  }
+  
+  h2{
+    font-size: 5rem;
+    font-weight: lighter;
+    font-family: "cactus", sans-serif;
+    color: rgb(225, 220, 191);
+    text-shadow: -5px 5px rgb(252, 124, 98);
+    letter-spacing: 4px;
+  }
+  
+  h3{
+    font-size: 5rem;
+    font-family: "brandy", sans-serif;
+    color: rgb(225, 220, 191);
+    text-shadow: -5px 5px rgb(252, 124, 98);
+  }
+  
+  p{
+    font-family: "cactus";
+    font-weight: lighter;
+    color: rgb(252, 124, 98);
+    font-size: 1.4rem;
+    text-shadow: -2px 2px rgb(225, 220, 191);
+    letter-spacing: .1rem;
+  }
+  
+  
+  /* ********************** */
+  /* **** LINK STYLING **** */
+  /* ********************** */
+  
+  a{
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 2rem;
+    -webkit-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
+    display: inline-block;
+  }
+  
+  a:link{
+    color: rgb(252, 124, 98);
+  }
+  
+  a:visited{
+    color: rgb(252, 124, 98);
+  }
+  
+  a:hover{
+    color: goldenrod;
+  }
+  
+  #address > a{
+    color: rgb(225, 220, 191);
+    background-color: rgb(252, 124, 98);
+    border-radius: 15px;
+    padding: 20px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  #address > a:hover{
+    background-color: goldenrod;
+  }
+  
+  /*------ Pawpaw Corner------*/
+  
+  /* ********************* */
+  /* **** GRID LAYOUT **** */
+  /* ********************* */
+  
+  .pawpawcontainer{
+    display: -ms-grid;
+    display: grid;
+    grid: "pawpawheader pawpawheader pawpawheader" auto
+          ". gallery ." auto
+          /5% 1fr 5%;
+    grid-gap: 2rem;
+  }
+  
+  
+  /* ****************************** */
+  /* **** GRID SECTION LAYOUTS **** */
+  /* ****************************** */
+  
+  #pawpawheader{
+    grid-area: pawpawheader;
+  }
+  
+  .gallery{
+    grid-area: gallery;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .gallery > .pawpawpics {
+    margin: 0;
+    background-color: paleturquoise;
+    border-style: ridge;
+    border-width: 15px;
+    border-color: goldenrod;
+    list-style: none;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: .5rem;
+    grid-auto-flow: dense;
+  }
+  
+  .gallery > .pawpawpics > li:nth-child(3n) {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+    -ms-grid-row-span: 2;
+    grid-row: span 2;
+  }
+  
+  .gallery > .pawpawpics > li > figure {
+    height: 100%;
+    width: auto;
+  }
+  
+  .gallery > .pawpawpics > li > figure > img{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  
+  /* ************************* */
+  /* **** LIGHTBOX STYLES **** */
+  /* ************************* */
+  
+  #lightbox{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(175, 238, 238, .8);
+    display: none;
+  }
+  
+  #lightbox.active{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  #lightbox img{
+    max-height: 80%;
+    max-width: 90%;
+    border: ridge 15px goldenrod;
+  }
+  
+  @media (min-width: 700px){
+  
+  
+  .navigation{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  
+  .navigation li{
+    border-bottom: 0;
+    border-right: 2px solid rgb(252, 124, 98);
+  }
+  
+  .navigation li:last-child{
+    border-right: none;
+  }
+  
+  .navigation a{
+    font-size: calc(3rem + .2vw);
+  }
+  }
