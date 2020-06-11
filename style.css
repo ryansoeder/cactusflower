@@ -453,6 +453,7 @@ a:hover{
   #navigation li{
     border-bottom: 0;
     border-right: 2px solid rgb(252, 124, 98);
+    padding: 10px 0;
   }
 
   #navigation li:last-child{
