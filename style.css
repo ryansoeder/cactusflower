@@ -429,7 +429,7 @@ a:hover{
 @media (min-width: 700px){
 
   header{
-    padding-top: 70px;
+    margin: 76px 0 0 0;
   }
   
   #hamburger{
@@ -441,7 +441,7 @@ a:hover{
   }
 
   #navigation{
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgb(208, 245, 237);
     display: flex;
     flex-direction: row;
     position: absolute;
