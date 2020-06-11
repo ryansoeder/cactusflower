@@ -4,7 +4,7 @@ const lightbox = document.createElement('div'); // creates a div element and sto
 lightbox.id = 'lightbox'; // gives that div an id of '#lightbox'
 document.body.appendChild(lightbox); // attaches that div to the body tag in the html
 
-const images = document.querySelectorAll('img') // stores all images on the page in 'images' variable
+const images = document.querySelectorAll('.pic') // stores all images with class="pic" in 'images' variable
 images.forEach(image => { // for every image on the page...
     image.addEventListener('click', e => { // listen for it to be clicked on and...
         lightbox.classList.add('active'); // change the class to 'actice' (see CSS)

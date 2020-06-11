@@ -200,32 +200,62 @@ main{
 /* **** NAVIGATION MENU **** */
 /* ************************* */
 
-.navigation{
+#hamburger{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 40px;
+  width: auto;
+  opacity: 80%;
+}
+
+#closeburger{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 40px;
+  width: auto;
+  opacity: 80%;
+}
+#closeburger:visited{
+  display: none;
+}
+
+#navigation{
   padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   height: auto;
-  position: relative;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .9);
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
-  margin: 20px 0 0 0;
-  z-index: 1;
+  margin: 0;
+  z-index: 1000;
+  transform: scale(0,1);
+  transform-origin: left;
+  transition: transform ease-in-out .3s;
 }
 
-.navigation li{
+#navigation:target{
+  transform: scale(1,1);
+}
+
+#navigation li{
   flex-grow: 1;
   text-align: center;
   border-bottom: 2px solid rgb(252, 124, 98);
   padding: 10px 0;
 }
 
-.navigation li:last-child{
+#navigation li:last-child{
   border-bottom: none;
 }
 
-.navigation a{
+#navigation a{
   font-size: 3rem;
   font-family: "brandy";
   text-shadow: -2px 2px rgb(225, 220, 191);
@@ -393,23 +423,42 @@ a:hover{
   border: ridge 15px goldenrod;
 }
 
+
+/* *********************** */
+/* **** MEDIA QUERIES **** */
+/* *********************** */
+
 @media (min-width: 700px){
 
+  header{
+    padding-top: 70px;
+  }
+  
+  #hamburger{
+    display: none;
+  }
 
-.navigation{
-  flex-direction: row;
-}
+  #closeburger{
+    display: none;
+  }
 
-.navigation li{
-  border-bottom: 0;
-  border-right: 2px solid rgb(252, 124, 98);
-}
+  #navigation{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    transform: scale(1);
+  }
 
-.navigation li:last-child{
-  border-right: none;
-}
+  #navigation li{
+    border-bottom: 0;
+    border-right: 2px solid rgb(252, 124, 98);
+  }
 
-.navigation a{
-  font-size: calc(3rem + .2vw);
-}
+  #navigation li:last-child{
+    border-right: none;
+  }
+
+  #navigation a{
+    font-size: 2rem;
+  }
 }
