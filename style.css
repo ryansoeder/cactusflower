@@ -367,6 +367,7 @@ a:hover{
 
 .pawpawpics {
   margin: 0;
+  padding: 1rem;
   background-color: paleturquoise;
   border-style: ridge;
   border-width: 15px;
@@ -374,7 +375,7 @@ a:hover{
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: .5rem;
+  grid-gap: 1.5rem;
   grid-auto-flow: dense;
 }
 
@@ -386,6 +387,7 @@ a:hover{
 .gallery > .pawpawpics > li > figure {
   height: 100%;
   width: auto;
+  margin: 0;
 }
 
 .gallery > .pawpawpics > li > figure > img{
