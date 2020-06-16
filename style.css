@@ -112,9 +112,8 @@ header{
 
 #hours{
   grid-area: hours;
-  list-style: none;
   text-align: left;
-  padding-bottom: 30px;
+  padding: 0 0 30px 10px;
   border-bottom-style: ridge;
   border-bottom-width: 15px;
   border-bottom-color: goldenrod;
@@ -122,9 +121,8 @@ header{
 
 #days{
   grid-area: days;
-  list-style: none;
   text-align: right;
-  padding-bottom: 30px;
+  padding: 0 10px 30px 0;
   border-bottom-style: ridge;
   border-bottom-width: 15px;
   border-bottom-color: goldenrod;
@@ -235,7 +233,7 @@ main{
   z-index: 1000;
   transform: scale(0,1);
   transform-origin: left;
-  transition: transform ease-in-out .3s;
+  transition: transform ease-in-out .2s;
 }
 
 #navigation:target{
@@ -297,6 +295,12 @@ p{
   font-size: 1.4rem;
   text-shadow: -2px 2px rgb(225, 220, 191);
   letter-spacing: .1rem;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -372,7 +376,6 @@ a:hover{
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
-  list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1.5rem;
