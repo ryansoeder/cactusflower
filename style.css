@@ -96,7 +96,7 @@ header{
   .info{
     background-attachment: none;
     background-position: center;
-    background-size: auto 100%;
+    background-size: cover;
     
   }
 }
