@@ -357,7 +357,6 @@ a:hover{
   grid: "pawpawheader pawpawheader pawpawheader" auto
         ". gallery ." auto
         /5% 1fr 5%;
-  grid-gap: 2rem;
 }
 
 
@@ -367,6 +366,7 @@ a:hover{
 
 #pawpawheader{
   grid-area: pawpawheader;
+  margin-bottom: 2rem;
 }
 
 .gallery{
@@ -383,7 +383,7 @@ a:hover{
   border-width: 15px;
   border-color: goldenrod;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1.5rem;
   grid-auto-flow: dense;
 }

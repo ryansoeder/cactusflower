@@ -1,25 +1,3 @@
-// NAV MENU BUTTON
-
-const menuBtn = document.querySelector('#menu-btn');
-const menu = document.querySelector('#menu');
-const menuItems = document.querySelectorAll('#menu li');
-let menuOpen = false;
-
-menuBtn.addEventListener('click', () => {
-    if (!menuOpen) {
-        menuBtn.classList.add('open');
-        menu.classList.add('open');
-
-        menuOpen = true;
-    } else {
-        menuBtn.classList.remove('open');
-        menu.classList.remove('open');
-
-        menuOpen = false;
-    }
-})
-
-
 // Lightbox for Pawpaw Corner gallery. Notes for learning purposes.
 
 const lightbox = document.createElement('div'); // creates a div element and stores it in lightbox variable
@@ -43,3 +21,23 @@ lightbox.addEventListener('click', e => { // when you click on #lightbox when is
     if (e.target !== e.currentTarget) return; // and you're not clicking on the picture you clicked to make #lightbox active in the first place...
     lightbox.classList.remove('active'); // turn off .active state [(close #lightbox) see CSS]
 });
+
+// NAV MENU BUTTON
+
+const menuBtn = document.querySelector('#menu-btn');
+const menu = document.querySelector('#menu');
+let menuOpen = false;
+
+menuBtn.addEventListener('click', () => {
+    if (!menuOpen) {
+        menuBtn.classList.add('open');
+        menu.classList.add('open');
+
+        menuOpen = true;
+    } else {
+        menuBtn.classList.remove('open');
+        menu.classList.remove('open');
+
+        menuOpen = false;
+    }
+})
