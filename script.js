@@ -30,28 +30,36 @@ const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 let menuOpen = false;
 
-menuBtn.addEventListener('click', () => {
+menuBtn.addEventListener('click', event => {
+
     if (!menuOpen) {
         menuBtn.classList.add('open');
         menu.classList.add('open');
 
         menuOpen = true;
+
+        event.stopPropagation();
     } else {
         menuBtn.classList.remove('open');
         menu.classList.remove('open');
 
         menuOpen = false;
+
+        event.stopPropagation();
     }
 });
 
 body.addEventListener('click', event => { 
-    if (menuOpen && 
-        event.target !== menu && 
-        event.target !== menuBtn) {
-    menu.classList.remove('open');
-    menuBtn.classList.remove('open');
-    
-    menuOpen = false;
+
+    const nav = document.querySelector('nav');
+
+    if (nav.contains(event.target)) {
+        return;
+    } else {
+        menu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        
+        menuOpen = false;
     }
 });
 
