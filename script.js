@@ -22,8 +22,10 @@ lightbox.addEventListener('click', e => { // when you click on #lightbox when is
     lightbox.classList.remove('active'); // turn off .active state [(close #lightbox) see CSS]
 });
 
+
 // NAV MENU BUTTON
 
+const body = document.querySelector('body');
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 let menuOpen = false;
@@ -40,4 +42,16 @@ menuBtn.addEventListener('click', () => {
 
         menuOpen = false;
     }
-})
+});
+
+body.addEventListener('click', event => { 
+    if (menuOpen && 
+        event.target !== menu && 
+        event.target !== menuBtn) {
+    menu.classList.remove('open');
+    menuBtn.classList.remove('open');
+    
+    menuOpen = false;
+    }
+});
+

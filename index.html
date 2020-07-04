@@ -2,16 +2,36 @@
 <html>
 
 <head>
+  <title>Cactus Flower Vintage</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="glide-3.4.1/dist/css/glide.core.css">
   <link rel="stylesheet" href="glide-3.4.1/dist/css/glide.theme.css">
-  <title>Cactus Flower Vintage</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script defer src="script.js"></script>
+
 </head>
 
 <body>
+
+  <nav>
+
+    <div id="menu-btn">
+      <div id="menu-btn__brgr"></div>
+    </div>
+
+    <ul id="menu">
+      <li><a href="#address" alt="store info link">Hours & Location</a></li>
+      <li><a href="pawpaw.html" alt="Pawpaw Corner link">Pawpaw Corner</a></li>
+      <li><a href="https://www.facebook.com/cactusflowervintage" alt="Facebook link" target="_blank">Facebook</a></li>
+      <li><a href="https://www.instagram.com/cactusfloweroutpost/" alt="Instagram link" target="_blank">Instagram</a></li>
+    </ul>
+
+  </nav>
 
   <div class="container">
     <header>
@@ -25,30 +45,30 @@
     </div>
     </header>
 
-  <div class="info" id="address">
-    <a href="https://www.google.com/maps/place/Cactus+Flower+Vintage/@38.2303271,-85.7058367,17z/data=!3m1!4b1!4m5!3m4!1s0x88690d60d104d1e5:0x326144d68676ccad!8m2!3d38.2303271!4d-85.703648" alt="Google Maps link to ahop address" title="Find us with Google Maps." target="_blank">1617 Bardstown Rd. <br>Louisville, KY 40205</a>
-  </div>
+    <div class="info" id="address">
+      <a href="https://www.google.com/maps/place/Cactus+Flower+Vintage/@38.2303271,-85.7058367,17z/data=!3m1!4b1!4m5!3m4!1s0x88690d60d104d1e5:0x326144d68676ccad!8m2!3d38.2303271!4d-85.703648" alt="Google Maps link to ahop address" title="Find us with Google Maps." target="_blank">1617 Bardstown Rd. <br>Louisville, KY 40205</a>
+    </div>
 
-  <ul class="info" id="days">
-    <li>Monday:</li>
-    <li>Tuesday:</li>
-    <li>Wednesday:</li>
-    <li>Thursday:</li>
-    <li>Friday:</li>
-    <li>Saturday:</li>
-    <li>Sunday:</li>
-  </ul>
+    <ul class="info" id="days">
+      <li>Monday:</li>
+      <li>Tuesday:</li>
+      <li>Wednesday:</li>
+      <li>Thursday:</li>
+      <li>Friday:</li>
+      <li>Saturday:</li>
+      <li>Sunday:</li>
+    </ul>
 
 
-  <ul class="info" id="hours">
-    <li>12 - 7pm</li>
-    <li>&nbsp;closed</li>
-    <li>&nbsp;closed</li>
-    <li>12 - 7pm</li>
-    <li>12 - 8pm</li>
-    <li>12 - 8pm</li>
-    <li>12 - 7pm</li>
-  </ul>
+    <ul class="info" id="hours">
+      <li>12 - 7pm</li>
+      <li>&nbsp;closed</li>
+      <li>&nbsp;closed</li>
+      <li>12 - 7pm</li>
+      <li>12 - 8pm</li>
+      <li>12 - 8pm</li>
+      <li>12 - 7pm</li>
+    </ul>
 
     <main>
       <div>
@@ -92,38 +112,29 @@
     </div>
   </div>
 
-  <a href="#navigation"><img src="img/hamburger.png" id="hamburger"></a>
-  <ul id="navigation">
-    <a href="#"><img src="img/hamburger.png" id="closeburger"></a>
-    <li><a href="#address" alt="store info link" id="location">Hours & Location</a></li>
-    <li><a href="https://www.etsy.com/shop/cactusfloweroutpost" alt="Etsy link" id="etsy" target="_blank">Etsy</a></li>
-    <li><a href="https://www.facebook.com/cactusflowervintage" alt="Facebook link" id="facebook" target="_blank">Facebook</a></li>
-    <li><a href="https://www.instagram.com/cactusfloweroutpost/" alt="Instagram link" id="instagram" target="_blank">Instagram</a></li>
-  </ul>
+  <script src="glide-3.4.1/dist/glide.js"></script>  
 
-<script src="glide-3.4.1/dist/glide.js"></script>  
+  <script>
 
-<script>
-
-new Glide('.glide', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 3,
-  breakpoints: {
-    900: {
-      perView: 2
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3,
+    breakpoints: {
+      900: {
+        perView: 2
+      },
+      700: {
+        perView: 1
+      }
     },
-    700: {
-      perView: 1
-    }
-  },
-  focusAt: 'center',
-  autoplay: 3000,
-  animationDuration: 1000,
+    focusAt: 'center',
+    autoplay: 3000,
+    animationDuration: 1000,
 
-}).mount()
+  }).mount()
 
-</script>
+  </script>
 
 </body>
 
