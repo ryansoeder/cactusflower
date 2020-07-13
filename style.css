@@ -56,7 +56,7 @@ header{
   grid-area: header;
   text-align: center;
   overflow: wrap;
-  background-color: rgb(93, 222, 194);
+  background-color: paleturquoise;
   margin-bottom: 0;
   border: 15px ridge goldenrod;
   display: flex;
@@ -169,6 +169,7 @@ main{
   height: 100%;
   margin: 20px 20px;
   flex: 1 auto;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
 }
 
 #pawpawcutout{
@@ -309,7 +310,7 @@ h1{
   font-size: calc(3rem + 5vw);
   font-weight: lighter;
   font-family: "cactus", sans-serif;
-  color: rgb(225, 220, 191);
+  color: lightgoldenrodyellow;
   text-shadow: -5px 5px rgb(252, 124, 98);
   letter-spacing: 4px;
 }
@@ -318,7 +319,7 @@ h2{
   font-size: calc(2rem + 5vw);
   font-weight: lighter;
   font-family: "cactus", sans-serif;
-  color: rgb(225, 220, 191);
+  color: lightgoldenrodyellow;
   text-shadow: -5px 5px rgb(252, 124, 98);
   letter-spacing: 4px;
 }
@@ -326,7 +327,7 @@ h2{
 h3{
   font-size: calc(3rem + 5vw);
   font-family: "brandy", sans-serif;
-  color: rgb(225, 220, 191);
+  color: lightgoldenrodyellow;
   text-shadow: -5px 5px rgb(252, 124, 98);
 }
 
@@ -335,7 +336,7 @@ p{
   font-weight: lighter;
   color: rgb(252, 124, 98);
   font-size: 1.4rem;
-  text-shadow: -2px 2px rgb(225, 220, 191);
+  text-shadow: -2px 2px lightgoldenrodyellow;
   letter-spacing: .1rem;
 }
 
@@ -422,6 +423,7 @@ a:hover{
   border-style: ridge;
   border-width: 15px;
   border-color: goldenrod;
+  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1.5rem;

@@ -49,17 +49,14 @@ menuBtn.addEventListener('click', event => {
     }
 });
 
+// close after clicking anything
+
 body.addEventListener('click', event => { 
 
-    const nav = document.querySelector('nav');
-
-    if (nav.contains(event.target)) {
-        return;
-    } else {
+    if (menuOpen) {
         menu.classList.remove('open');
         menuBtn.classList.remove('open');
         
         menuOpen = false;
     }
 });
-
