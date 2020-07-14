@@ -21,7 +21,7 @@ body{
 /* Fix for ^background-image^ not staying fixed on iOS devices */
 body::after{
   content: "";
-  background-image: url("img/cactus_background.jpg");
+  background-image: linear-gradient(to top,black -5%, gold 3%, orange 8%, fuchsia 15%, indigo 30%, midnightblue 50%, black 100%);
   top: 0;
   right: 0;
   bottom: 0;
@@ -504,7 +504,7 @@ a:hover{
 
 
   header{
-    margin: 76px 0 0 0;
+    margin: 86px 0 0 0;
   }
   
   #menu-btn{
