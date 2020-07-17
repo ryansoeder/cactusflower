@@ -23,7 +23,7 @@ body::after {
   content: "";
   background-image: url("img/retro.jpg");
   background-repeat: repeat;
-  background-size: 25rem;
+  background-size: 22rem;
   top: 0;
   right: 0;
   bottom: 0;
