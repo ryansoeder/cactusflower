@@ -21,16 +21,8 @@ body {
 /* Fix for ^background-image^ not staying fixed on iOS devices */
 body::after {
   content: "";
-  background-image: linear-gradient(
-    to top,
-    black -5%,
-    gold 3%,
-    orange 8%,
-    fuchsia 15%,
-    indigo 30%,
-    midnightblue 50%,
-    black 100%
-  );
+  background-image: url("img/retro.jpg");
+  background-repeat: repeat;
   top: 0;
   right: 0;
   bottom: 0;
