@@ -3,6 +3,9 @@ const body = document.querySelector('body');
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 
+// fetch-related variables
+const listingURL =
+	'https://openapi.etsy.com/v2//shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&api_key=svhon2zu78866rwwekz6u9v5';
 
 //Nav button
 let menuOpen = false;
@@ -35,7 +38,6 @@ body.addEventListener('click', (event) => {
 		menuOpen = false;
 	}
 });
-
 
 // Lightbox for Pawpaw Corner gallery.
 
