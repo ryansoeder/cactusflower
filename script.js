@@ -5,7 +5,40 @@ const menu = document.querySelector('#menu');
 
 // fetch-related variables
 const listingURL =
-	'https://openapi.etsy.com/v2//shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&api_key=svhon2zu78866rwwekz6u9v5';
+	'https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&api_key=svhon2zu78866rwwekz6u9v5';
+
+// ------------------------------------------
+//  FETCH FUNCTIONS
+// ------------------------------------------
+
+fetchData(listingURL)
+	.then(data => etsyHTML(data.results));
+
+// ------------------------------------------
+//  HELPER FUNCTIONS
+// ------------------------------------------
+
+function fetchData(url) {
+	return fetch(url)
+		.then(checkStatus)
+		.then((response) => response.json())
+		.catch((error) => console.log('Fetch error: ', error));
+}
+
+function checkStatus(response) {
+	if (response.ok) {
+		return Promise.resolve(response);
+	} else {
+		return Promise.reject(new Error(response.statusText));
+	}
+}
+
+function etsyHTML(data) {
+  let list = `<ul class=etsy-list>`;
+  data.map(result => {
+    console.log(result.title);
+  })
+}
 
 //Nav button
 let menuOpen = false;

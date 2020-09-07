@@ -145,7 +145,12 @@ main {
 	min-width: 0;
 }
 
-.pawpawcorner {
+#etsy {
+  height: 700px;
+  overflow-y: scroll;
+}
+
+#pawpawcorner {
 	padding: 20px;
 	grid-area: pawpaw;
 	text-align: center;
