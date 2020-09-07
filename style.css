@@ -171,6 +171,10 @@ main {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
+#etsy-img {
+  width: 300px;
+}
+
 #pawpawcutout {
 	width: 20%;
 }
