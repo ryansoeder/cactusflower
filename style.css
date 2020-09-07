@@ -150,10 +150,13 @@ main {
   overflow-y: scroll;
   display: flex;
   justify-content: center;
+  background-color: floralwhite;
+  border-radius: 10px;
 }
 
 #etsy a {
   font-size: 1rem;
+  font-family: sans-serif;
 }
 
 #etsy-list {
