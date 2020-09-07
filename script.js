@@ -1,3 +1,42 @@
+// DOM grabbers
+const body = document.querySelector('body');
+const menuBtn = document.querySelector('#menu-btn');
+const menu = document.querySelector('#menu');
+
+
+//Nav button
+let menuOpen = false;
+
+menuBtn.addEventListener('click', (event) => {
+	if (!menuOpen) {
+		menuBtn.classList.add('open');
+		menu.classList.add('open');
+
+		menuOpen = true;
+
+		event.stopPropagation();
+	} else {
+		menuBtn.classList.remove('open');
+		menu.classList.remove('open');
+
+		menuOpen = false;
+
+		event.stopPropagation();
+	}
+});
+
+// close nav menu after clicking anything
+
+body.addEventListener('click', (event) => {
+	if (menuOpen) {
+		menu.classList.remove('open');
+		menuBtn.classList.remove('open');
+
+		menuOpen = false;
+	}
+});
+
+
 // Lightbox for Pawpaw Corner gallery.
 
 const lightbox = document.createElement('div');
@@ -20,40 +59,4 @@ images.forEach((image) => {
 lightbox.addEventListener('click', (e) => {
 	if (e.target !== e.currentTarget) return;
 	lightbox.classList.remove('active');
-});
-
-// NAV MENU BUTTON
-
-const body = document.querySelector('body');
-const menuBtn = document.querySelector('#menu-btn');
-const menu = document.querySelector('#menu');
-let menuOpen = false;
-
-menuBtn.addEventListener('click', (event) => {
-	if (!menuOpen) {
-		menuBtn.classList.add('open');
-		menu.classList.add('open');
-
-		menuOpen = true;
-
-		event.stopPropagation();
-	} else {
-		menuBtn.classList.remove('open');
-		menu.classList.remove('open');
-
-		menuOpen = false;
-
-		event.stopPropagation();
-	}
-});
-
-// close after clicking anything
-
-body.addEventListener('click', (event) => {
-	if (menuOpen) {
-		menu.classList.remove('open');
-		menuBtn.classList.remove('open');
-
-		menuOpen = false;
-	}
 });
