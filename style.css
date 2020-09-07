@@ -150,6 +150,23 @@ main {
   overflow-y: scroll;
 }
 
+#etsy a {
+  font-size: 1rem;
+}
+
+#etsy-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#etsy-list-item {
+  flex: 1 0 200px;
+}
+
+#etsy-list-item figure {
+  margin: 20px;
+}
+
 #pawpawcorner {
 	padding: 20px;
 	grid-area: pawpaw;
@@ -176,8 +193,9 @@ main {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-#etsy-img {
-  width: 300px;
+#etsy-list img {
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 #pawpawcutout {

@@ -2,10 +2,12 @@
 const body = document.querySelector('body');
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
+const etsyDiv = document.querySelector('#etsy');
 
 // fetch-related variables
 const listingURL =
-	'https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&api_key=svhon2zu78866rwwekz6u9v5';
+	'https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&api_key=svhon2zu78866rwwekz6u9v5';
+
 
 // ------------------------------------------
 //  FETCH FUNCTIONS
@@ -14,8 +16,9 @@ const listingURL =
 fetchData(listingURL)
 	.then(data => etsyHTML(data.results));
 
+
 // ------------------------------------------
-//  HELPER FUNCTIONS
+//  FETCH HELPER FUNCTIONS
 // ------------------------------------------
 
 function fetchData(url) {
@@ -34,13 +37,28 @@ function checkStatus(response) {
 }
 
 function etsyHTML(data) {
-  let list = `<ul class=etsy-list>`;
+  let list = `<ul id="etsy-list">`;
   data.map(result => {
-    console.log(result.title);
-  })
+    list += `
+      <li class="etsy-list-item">
+        <a href=${result.url} target="_blank"s>
+          <figure>
+            <img src=${result.MainImage.url_170x135} alt="etsy item">
+            <figcaption>${result.title}
+          </figure>
+        </a>
+      </li>`;
+  });
+  list += `</ul>`;
+
+  etsyDiv.innerHTML = list;
 }
 
-//Nav button
+
+// ------------------------------------------
+//  NAV BUTTON
+// ------------------------------------------
+
 let menuOpen = false;
 
 menuBtn.addEventListener('click', (event) => {
@@ -72,7 +90,10 @@ body.addEventListener('click', (event) => {
 	}
 });
 
-// Lightbox for Pawpaw Corner gallery.
+
+// ------------------------------------------
+//  PAWPAW CORNER LIGHTBOX
+// ------------------------------------------
 
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
