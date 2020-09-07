@@ -6,7 +6,7 @@ const etsyDiv = document.querySelector('#etsy');
 
 // fetch-related variables
 const listingURL =
-	'https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&api_key=svhon2zu78866rwwekz6u9v5';
+	'https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&limit=100&api_key=svhon2zu78866rwwekz6u9v5';
 
 
 // ------------------------------------------
