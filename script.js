@@ -43,8 +43,8 @@ function etsyHTML(data) {
       <li class="etsy-list-item">
         <a href=${result.url} target="_blank"s>
           <figure>
-            <img src=${result.MainImage.url_170x135} alt="etsy item">
-            <figcaption>${result.title}
+            <img src=${result.MainImage.url_170x135} alt="etsy item"><br>
+            <figcaption>${result.title}</figcaption>
           </figure>
         </a>
       </li>`;
