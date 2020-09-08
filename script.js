@@ -95,7 +95,7 @@ document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll('.pic');
 images.forEach((image) => {
-	image.addEventListener('click', (e) => {
+	image.addEventListener('click', (event) => {
 		lightbox.classList.add('active');
 		const img = document.createElement('img');
 		img.src = image.src;
@@ -106,7 +106,7 @@ images.forEach((image) => {
 	});
 });
 
-lightbox.addEventListener('click', (e) => {
-	if (e.target !== e.currentTarget) return;
+lightbox.addEventListener('click', (event) => {
+	if (event.target !== event.currentTarget) return;
 	lightbox.classList.remove('active');
 });
