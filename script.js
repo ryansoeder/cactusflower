@@ -8,14 +8,11 @@ const etsyDiv = document.querySelector('#etsy');
 const listingURL =
 	'https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage&limit=100&api_key=svhon2zu78866rwwekz6u9v5';
 
-
 // ------------------------------------------
 //  FETCH FUNCTIONS
 // ------------------------------------------
 
-fetchData(listingURL)
-	.then(data => etsyHTML(data.results));
-
+fetchData(listingURL).then((data) => etsyHTML(data.results));
 
 // ------------------------------------------
 //  FETCH HELPER FUNCTIONS
@@ -37,9 +34,9 @@ function checkStatus(response) {
 }
 
 function etsyHTML(data) {
-  let list = `<ul id="etsy-list">`;
-  data.map(result => {
-    list += `
+	let list = `<ul id="etsy-list">`;
+	data.map((result) => {
+		list += `
       <li class="etsy-list-item">
         <a href=${result.url} target="_blank"s>
           <figure>
@@ -47,13 +44,13 @@ function etsyHTML(data) {
             <figcaption>${result.title}</figcaption>
           </figure>
         </a>
-      </li>`;
-  });
-  list += `</ul>`;
+	  </li>
+	  `;
+	});
+	list += `</ul>`;
 
-  etsyDiv.innerHTML = list;
+	etsyDiv.innerHTML = list;
 }
-
 
 // ------------------------------------------
 //  NAV BUTTON
@@ -89,7 +86,6 @@ body.addEventListener('click', (event) => {
 		menuOpen = false;
 	}
 });
-
 
 // ------------------------------------------
 //  PAWPAW CORNER LIGHTBOX
