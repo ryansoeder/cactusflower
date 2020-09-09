@@ -12,7 +12,8 @@ const listingURL =
 //  FETCH FUNCTIONS
 // ------------------------------------------
 
-fetchData(listingURL).then((data) => etsyHTML(data.results));
+fetchData(listingURL)
+	.then((data) => etsyHTML(data.results));
 
 // ------------------------------------------
 //  FETCH HELPER FUNCTIONS
@@ -35,7 +36,7 @@ function checkStatus(response) {
 
 function etsyHTML(data) {
 	let list = `<ul id="etsy-list">`;
-	data.map((result) => {
+	data.forEach((result) => {
 		list += `
       <li class="etsy-list-item">
         <a href=${result.url} target="_blank"s>
