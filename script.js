@@ -3,8 +3,8 @@ let listingURL = '';
 let sectionsURL = '';
 
 
-	listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=${API_SECRET}`;
-	sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=${API_SECRET}`;
+	listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=${env.API_SECRET}`;
+	sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=${env.API_SECRET}`;
 
 	// ------------------------------------------
 	//  FETCH FUNCTIONS
