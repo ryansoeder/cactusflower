@@ -1,8 +1,23 @@
-require(['env'], (env) => {
-  console.log('here are the env variables:', env)
-})
+// fetch-related variables
+let listingURL = '';
+let sectionsURL = '';
 
-// require('dotenv').config();
+require(['env'], (env) => {
+	listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=${env.API_SECRET}`;
+	sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=${env.API_SECRET}`;
+
+	// ------------------------------------------
+	//  FETCH FUNCTIONS
+	// ------------------------------------------
+
+	Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
+		const listings = data[0].results;
+		const sections = data[1].results;
+
+		etsyHTML(listings);
+		populateDropdown(sections);
+	});
+});
 
 // DOM grabbers
 const body = document.querySelector('body');
@@ -11,24 +26,6 @@ const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const etsyDiv = document.querySelector('#etsy');
 const dropdownOptions = document.querySelector('#dropdownOptions');
-
-// fetch-related variables
-const listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=svhon2zu78866rwwekz6u9v5`;
-const sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=svhon2zu78866rwwekz6u9v5`;
-
-// ------------------------------------------
-//  FETCH FUNCTIONS
-// ------------------------------------------
-
-// fetchData(listingURL).then((data) => etsyHTML(data.results));
-
-Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
-	const listings = data[0].results;
-	const sections = data[1].results;
-
-	etsyHTML(listings);
-	populateDropdown(sections);
-});
 
 // ------------------------------------------
 //  FETCH HELPER FUNCTIONS
@@ -53,24 +50,22 @@ function etsyHTML(data) {
 	let list = `<ul id="etsy-list">`;
 	data.forEach((result) => {
 		list += `
-      <li class="etsy-list-item">
-        <a href=${result.url} target="_blank"s>
-            <img src=${result.MainImage.url_170x135} alt="etsy item"><br>
-            <span>${result.title}</span>
-        </a>
-	  </li>
-	  `;
+		<li class="etsy-list-item">
+			<a href=${result.url} target="_blank"s>
+				<img src=${result.MainImage.url_170x135} alt="etsy item"><br>
+				<span>${result.title}</span>
+			</a>
+		</li>
+		`;
 	});
 	list += `</ul>`;
-
 	etsyDiv.innerHTML = list;
 }
 
 function populateDropdown(data) {
 	let options = `<option value="Every Damn Thing">Every Damn Thing</option>`;
 	data.forEach((section) => {
-		options +=
-		`
+		options += `
 		<option value="${section.title}">${section.title} <span>(${section.active_listing_count})</span></option>
 		`;
 	});
@@ -78,28 +73,25 @@ function populateDropdown(data) {
 	dropdownOptions.innerHTML = options;
 }
 
-function deepSearch() {
+async function deepSearch() {
 	let searchList = `<ul id="etsy-list">`;
 
-	fetchData(listingURL)
-	.then((data) => {
-		data.results.forEach((result) => {
-			if (dropdownOptions.value === result.Section.title) {
-				console.log(result);
-				searchList += `
-				<li class="etsy-list-item">
-					<a href=${result.url} target="_blank"s>
-						<img src=${result.MainImage.url_170x135} alt="etsy item"><br>
-						<span>${result.title}</span>
-					</a>
-				</li>
-				`;
-			}
-		});
+	const data = await fetchData(listingURL);
+	data.results.forEach((result) => {
+		// console.log(result.Section);
+		if (result.Section && dropdownOptions.value === result.Section.title) {
+			// console.log(result.Section);
+			searchList += `
+			<li class="etsy-list-item">
+				<a href=${result.url} target="_blank"s>
+					<img src=${result.MainImage.url_170x135} alt="etsy item"><br>
+					<span>${result.title}</span>
+				</a>
+			</li>
+			`;
+		}
 	});
-
 	searchList += `</ul>`;
-
 	etsyDiv.innerHTML = searchList;
 }
 
