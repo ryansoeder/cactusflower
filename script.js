@@ -1,26 +1,3 @@
-
-// fetch-related variables
-let listingURL = '';
-let sectionsURL = '';
-
-
-	listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=${process.env.API_SECRET}`;
-	sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=${process.env.API_SECRET}`;
-
-	// ------------------------------------------
-	//  FETCH FUNCTIONS
-	// ------------------------------------------
-
-	Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
-		const listings = data[0].results;
-		const sections = data[1].results;
-
-		etsyHTML(listings);
-		populateDropdown(sections);
-	});
-
-
-
 // DOM grabbers
 const body = document.querySelector('body');
 const main = document.querySelector('main');
@@ -28,6 +5,22 @@ const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const etsyDiv = document.querySelector('#etsy');
 const dropdownOptions = document.querySelector('#dropdownOptions');
+
+// fetch-related variables
+const listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=rlk6rfoz714vea6dl8j63eqt`;
+const sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=rlk6rfoz714vea6dl8j63eqt`;
+
+// ------------------------------------------
+//  FETCH FUNCTIONS
+// ------------------------------------------
+
+Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
+	const listings = data[0].results;
+	const sections = data[1].results;
+
+	etsyHTML(listings);
+	populateDropdown(sections);
+});
 
 // ------------------------------------------
 //  FETCH HELPER FUNCTIONS
@@ -80,9 +73,7 @@ async function deepSearch() {
 
 	const data = await fetchData(listingURL);
 	data.results.forEach((result) => {
-		// console.log(result.Section);
 		if (result.Section && dropdownOptions.value === result.Section.title) {
-			// console.log(result.Section);
 			searchList += `
 			<li class="etsy-list-item">
 				<a href=${result.url} target="_blank"s>
@@ -136,30 +127,4 @@ body.addEventListener('click', (event) => {
 
 		menuOpen = false;
 	}
-});
-
-// ------------------------------------------
-//  PAWPAW CORNER LIGHTBOX
-// ------------------------------------------
-
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
-
-const images = document.querySelectorAll('.pic');
-images.forEach((image) => {
-	image.addEventListener('click', (event) => {
-		lightbox.classList.add('active');
-		const img = document.createElement('img');
-		img.src = image.src;
-		while (lightbox.firstChild) {
-			lightbox.removeChild(lightbox.firstChild);
-		}
-		lightbox.appendChild(img);
-	});
-});
-
-lightbox.addEventListener('click', (event) => {
-	if (event.target !== event.currentTarget) return;
-	lightbox.classList.remove('active');
 });
