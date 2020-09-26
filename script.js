@@ -1,3 +1,26 @@
+
+// fetch-related variables
+let listingURL = '';
+let sectionsURL = '';
+
+
+	listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=${process.env.API_SECRET}`;
+	sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=${process.env.API_SECRET}`;
+
+	// ------------------------------------------
+	//  FETCH FUNCTIONS
+	// ------------------------------------------
+
+	Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
+		const listings = data[0].results;
+		const sections = data[1].results;
+
+		etsyHTML(listings);
+		populateDropdown(sections);
+	});
+
+
+
 // DOM grabbers
 const body = document.querySelector('body');
 const main = document.querySelector('main');
@@ -5,24 +28,6 @@ const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const etsyDiv = document.querySelector('#etsy');
 const dropdownOptions = document.querySelector('#dropdownOptions');
-
-// fetch-related variables
-let listingURL = 'https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=rlk6rfoz714vea6dl8j63eqt';
-let sectionsURL = 'https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=rlk6rfoz714vea6dl8j63eqt';
-
-
-// ------------------------------------------
-//  FETCH FUNCTIONS
-// ------------------------------------------
-
-Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
-	const listings = data[0].results;
-	const sections = data[1].results;
-
-	etsyHTML(listings);
-	populateDropdown(sections);
-});
-
 
 // ------------------------------------------
 //  FETCH HELPER FUNCTIONS
