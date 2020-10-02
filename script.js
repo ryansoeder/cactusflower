@@ -23,8 +23,8 @@ fetchData('/sections')
 // .then((data) => {
 // 	const listings = data[0].results;
 // 	const sections = data[1].results;
-// 	console.log(listings);
-// 	console.log(sections);
+// 	// console.log(listings);
+// 	// console.log(sections);
 // 	etsyHTML(listings);
 // 	populateDropdown(sections);
 // });
