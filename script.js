@@ -7,20 +7,27 @@ const etsyDiv = document.querySelector('#etsy');
 const dropdownOptions = document.querySelector('#dropdownOptions');
 
 // fetch-related variables
-const listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=rlk6rfoz714vea6dl8j63eqt`;
-const sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=rlk6rfoz714vea6dl8j63eqt`;
+// const listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=rlk6rfoz714vea6dl8j63eqt`;
+// const sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=rlk6rfoz714vea6dl8j63eqt`;
 
 // ------------------------------------------
 //  FETCH FUNCTIONS
 // ------------------------------------------
+fetchData('/listings')
+.then(json => etsyHTML(json.results))
 
-Promise.all([fetchData(listingURL), fetchData(sectionsURL)]).then((data) => {
-	const listings = data[0].results;
-	const sections = data[1].results;
+fetchData('/sections')
+.then(json => populateDropdown(json.results))
 
-	etsyHTML(listings);
-	populateDropdown(sections);
-});
+// Promise.all([fetchData('/listings'), fetchData('/sections')])
+// .then((data) => {
+// 	const listings = data[0].results;
+// 	const sections = data[1].results;
+// 	console.log(listings);
+// 	console.log(sections);
+// 	etsyHTML(listings);
+// 	populateDropdown(sections);
+// });
 
 // ------------------------------------------
 //  FETCH HELPER FUNCTIONS
@@ -71,7 +78,7 @@ function populateDropdown(data) {
 async function deepSearch() {
 	let searchList = `<ul id="etsy-list">`;
 
-	const data = await fetchData(listingURL);
+	const data = await fetchData('/listings');
 	data.results.forEach((result) => {
 		if (result.Section && dropdownOptions.value === result.Section.title) {
 			searchList += `
