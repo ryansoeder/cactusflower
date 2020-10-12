@@ -6,10 +6,6 @@ const menu = document.querySelector('#menu');
 const etsyDiv = document.querySelector('#etsy');
 const dropdownOptions = document.querySelector('#dropdownOptions');
 
-// fetch-related variables
-// const listingURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/listings/active?&fields=listing_id,title,url&includes=MainImage,Section&limit=999&api_key=rlk6rfoz714vea6dl8j63eqt`;
-// const sectionsURL = `https://cors-anywhere.herokuapp.com/https://openapi.etsy.com/v2/shops/CactusFlowerOutpost/sections?&api_key=rlk6rfoz714vea6dl8j63eqt`;
-
 // ------------------------------------------
 //  FETCH FUNCTIONS
 // ------------------------------------------
@@ -94,6 +90,15 @@ async function deepSearch() {
 	searchList += `</ul>`;
 	etsyDiv.innerHTML = searchList;
 }
+
+// export for testing
+module.exports.fetchData = fetchData;
+module.exports.checkStatus = checkStatus;
+module.exports.etsyHTML = etsyHTML;
+module.exports.checkStatus = checkStatus;
+module.exports.populateDropdown = populateDropdown;
+module.exports.checkStatus = checkStatus;
+module.exports.deepSearch = deepSearch;
 
 // ------------------------------------------
 //  EVENT LISTENERS

@@ -145,6 +145,18 @@ main {
 	min-width: 0;
 }
 
+#selectSection label {
+	font-family: sans-serif;
+}
+
+#dropdownOptions {
+	margin: 0 auto;
+	width: 400px;
+	height: 30px;
+	font-family: sans-serif;
+	border-radius: 5px;
+}
+
 #etsy {
 	height: 700px;
 	padding: 20px;
