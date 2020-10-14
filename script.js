@@ -10,23 +10,13 @@ const dropdownOptions = document.querySelector('#dropdownOptions');
 //  FETCH FUNCTIONS
 // ------------------------------------------
 fetchData('/listings')
-.then(json => etsyHTML(json.results))
+.then(json => etsyHTML(json.results));
 
 fetchData('/sections')
-.then(json => populateDropdown(json.results))
-
-// Promise.all([fetchData('/listings'), fetchData('/sections')])
-// .then((data) => {
-// 	const listings = data[0].results;
-// 	const sections = data[1].results;
-// 	// console.log(listings);
-// 	// console.log(sections);
-// 	etsyHTML(listings);
-// 	populateDropdown(sections);
-// });
+.then(json => populateDropdown(json.results));
 
 // ------------------------------------------
-//  FETCH HELPER FUNCTIONS
+//  HELPER FUNCTIONS
 // ------------------------------------------
 
 function fetchData(url) {
@@ -61,10 +51,10 @@ function etsyHTML(data) {
 }
 
 function populateDropdown(data) {
-	let options = `<option value="Every Damn Thing">Every Damn Thing</option>`;
+	let options = `<option value="All Items">All Items</option>`;
 	data.forEach((section) => {
 		options += `
-		<option value="${section.title}">${section.title} <span>(${section.active_listing_count})</span></option>
+		<option value="${section.title}">${section.title} (${section.active_listing_count})</option>
 		`;
 	});
 
@@ -73,32 +63,37 @@ function populateDropdown(data) {
 
 async function deepSearch() {
 	let searchList = `<ul id="etsy-list">`;
-
 	const data = await fetchData('/listings');
-	data.results.forEach((result) => {
-		if (result.Section && dropdownOptions.value === result.Section.title) {
-			searchList += `
-			<li class="etsy-list-item">
-				<a href=${result.url} target="_blank"s>
-					<img src=${result.MainImage.url_170x135} alt="etsy item"><br>
-					<span>${result.title}</span>
-				</a>
-			</li>
-			`;
-		}
-	});
-	searchList += `</ul>`;
-	etsyDiv.innerHTML = searchList;
+
+	if (dropdownOptions.value === "All Items") {
+		etsyHTML(data.results);
+	} else {
+		data.results.forEach((result) => {
+			if (result.Section && dropdownOptions.value === result.Section.title) {
+				searchList += `
+				<li class="etsy-list-item">
+					<a href=${result.url} target="_blank"s>
+						<img src=${result.MainImage.url_170x135} alt="etsy item"><br>
+						<span>${result.title}</span>
+					</a>
+				</li>
+				`;
+			
+			}
+		});
+		searchList += `</ul>`;
+		etsyDiv.innerHTML = searchList;
+	}
 }
 
 // export for testing
-module.exports.fetchData = fetchData;
-module.exports.checkStatus = checkStatus;
-module.exports.etsyHTML = etsyHTML;
-module.exports.checkStatus = checkStatus;
-module.exports.populateDropdown = populateDropdown;
-module.exports.checkStatus = checkStatus;
-module.exports.deepSearch = deepSearch;
+// module.exports.fetchData = fetchData;
+// module.exports.checkStatus = checkStatus;
+// module.exports.etsyHTML = etsyHTML;
+// module.exports.checkStatus = checkStatus;
+// module.exports.populateDropdown = populateDropdown;
+// module.exports.checkStatus = checkStatus;
+// module.exports.deepSearch = deepSearch;
 
 // ------------------------------------------
 //  EVENT LISTENERS
@@ -109,7 +104,6 @@ dropdownOptions.addEventListener('change', deepSearch);
 // ------------------------------------------
 //  NAV BUTTON
 // ------------------------------------------
-
 let menuOpen = false;
 
 menuBtn.addEventListener('click', (event) => {
