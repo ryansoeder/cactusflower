@@ -86,15 +86,6 @@ async function deepSearch() {
 	}
 }
 
-// export for testing
-// module.exports.fetchData = fetchData;
-// module.exports.checkStatus = checkStatus;
-// module.exports.etsyHTML = etsyHTML;
-// module.exports.checkStatus = checkStatus;
-// module.exports.populateDropdown = populateDropdown;
-// module.exports.checkStatus = checkStatus;
-// module.exports.deepSearch = deepSearch;
-
 // ------------------------------------------
 //  EVENT LISTENERS
 // ------------------------------------------
