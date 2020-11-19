@@ -57,7 +57,7 @@ header {
 	grid-area: header;
 	text-align: center;
 	overflow: wrap;
-	background-color: paleturquoise;
+	background-color: #afeeee;
 	margin-bottom: 0;
 	border: 15px ridge goldenrod;
 	display: flex;
