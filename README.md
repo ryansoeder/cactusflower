@@ -9,7 +9,7 @@
 1. Open the project folder in Terminal and type `npm install --include=dev` to install dependencies. <br>
 ![](readme-img/npm-install.png)
 <br><br>
-1. Next, if Mocha is not alrady installed globally, install in the project by typing `npm install --save-dev mocha`. <br>
+1. Next, if Mocha is not already installed globally, install in the project by typing `npm install --save-dev mocha`. <br>
 ![](readme-img/mocha-install.png)
 <br><br>
 1. **Requirement 1:** Type `npm test` to run unit tests. <br>
