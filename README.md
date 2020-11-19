@@ -21,4 +21,5 @@
 1. **Requirement:** In your browswer, type `localhost:3000` into the navigation bar to view the results of the stylized data returned from calls to the Etsy API at the bottom of the page. Enjoy your shopping experience! <br>
 ![](readme-img/localhost.png)
 <br><br>
-1. When you are finished shopping, stop the server by typing `ctrl + C` in the terminal.
+1. When you are finished shopping, stop the server by typing `ctrl + C` in the terminal. <br>
+![](readme-img/ctrl-C.png)
