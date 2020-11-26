@@ -527,6 +527,12 @@ a:hover {
 	}
 }
 
+@media (min-width: 531px) and (max-width: 703px) {
+	.tag {
+		padding: 0 60px;
+	}
+}
+
 @media (min-width: 700px) {
 	.container {
 		grid:
@@ -571,4 +577,14 @@ a:hover {
 	a {
 		font-size: 2rem;
 	}
+}
+
+@media (min-width: 960px) {
+	.tag {
+		padding: 0 50px;
+	}
+	.tag p {
+		font-size: 2rem;
+	}
+
 }
