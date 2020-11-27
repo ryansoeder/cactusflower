@@ -147,13 +147,15 @@ main {
 
 #selectSection label {
 	font-family: sans-serif;
+	margin-bottom: 5px;
 }
 
 #dropdownOptions {
 	margin: 0 auto;
 	width: 250px;
-	height: 30px;
+	height: 35px;
 	font-family: sans-serif;
+	font-size: 1.1rem;
 	border-radius: 5px;
 }
 
